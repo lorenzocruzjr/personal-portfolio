@@ -87,8 +87,10 @@
       <h2>Contact Me</h2>
       <p>Feel free to reach out!</p>
       <!-- Contact Form (Updated for Netlify Forms) -->
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="redirect" value="/thank-you.html">
+          <input type="text" name="bot-field" style="display:none">
           <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" id="name" name="name" required>
@@ -108,7 +110,7 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
-      <p>&copy; 2025 Lorenzo Cruz Jr.. All rights reserved.</p>
+      <p>&copy; 2025 Lorenzo Cruz Jr. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
