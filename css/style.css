@@ -134,12 +134,21 @@ html {
   background-color: var(--primary-color);
 }
 
+/* backToTop */
+#backToTop {
+  position: fixed;
+  display: none;
+  right: 20px;
+  bottom: 80px;
+  z-index: 1000;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-section {
     text-align: center;
   }
-  
+
   .hero-section img {
     margin-top: 2rem;
   }
