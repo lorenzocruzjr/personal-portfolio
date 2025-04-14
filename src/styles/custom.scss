@@ -1,0 +1,14 @@
+$primary-color: #e91e63;
+
+body {
+  background-color: #f9f9f9;
+  color: $primary-color;
+}
+
+.btn-custom {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
