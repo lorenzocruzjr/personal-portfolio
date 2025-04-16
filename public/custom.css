@@ -170,6 +170,16 @@ html {
     right: 0;
     bottom: 0;
   }
+  .nav-category {
+    flex-wrap: nowrap;
+    margin-bottom: 0 !important;
+  }
+  .nav-category .nav-item .nav-link {
+    font-size: 14px;
+  }
+  .nav-pills .nav-link {
+    padding: 0.2rem 1rem;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */
