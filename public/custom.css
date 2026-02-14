@@ -22,7 +22,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-color), #0099ff);
+  background: linear-gradient(135deg, var(--primary-color), #3b4d59);
   min-height: 100vh;
   padding-top: 76px; /* Account for fixed navbar */
 }
