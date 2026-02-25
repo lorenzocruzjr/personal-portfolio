@@ -18,6 +18,72 @@ body {
 
 body {
   font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .custom-navbar {
+  background: rgba(18, 18, 18, 0.9);
+}
+
+body.dark-mode .custom-link {
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .btn-outline-dark {
+  border-color: #f1f1f1;
+  color: #f1f1f1;
+}
+
+/* Default (Light Mode) */
+.custom-toggler {
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler::before,
+.custom-toggler::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler::before {
+  top: -7px;
+}
+
+.custom-toggler::after {
+  top: 7px;
+}
+
+/* Dark Mode */
+  body.dark-mode .custom-toggler,
+  body.dark-mode .custom-toggler::before,
+  body.dark-mode .custom-toggler::after {
+  background-color: #fff;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Hero Section */
@@ -95,6 +161,48 @@ html {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+/* Light glass effect */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  /* padding: 15px 0; */
+}
+
+/* Add soft shadow on scroll */
+.custom-navbar.scrolled {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Nav links */
+.custom-link {
+  position: relative;
+  font-weight: 500;
+  color: #333 !important;
+  transition: color 0.3s ease;
+}
+
+.custom-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.custom-link:hover {
+  color: #0d6efd !important;
+}
+
+.custom-link:hover::after {
+  width: 100%;
 }
 
 /* Works Section */
