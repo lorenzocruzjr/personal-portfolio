@@ -39,6 +39,10 @@ body.dark-mode .btn-outline-dark {
   color: #f1f1f1;
 }
 
+body.dark-mode .work-item {
+  color: #121212 !important;
+}
+
 /* Default (Light Mode) */
 .custom-toggler {
   width: 24px;
