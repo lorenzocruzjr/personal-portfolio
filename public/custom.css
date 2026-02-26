@@ -79,6 +79,22 @@ body.dark-mode .work-item {
   background-color: #fff;
 }
 
+/* When modal is open (show X button) */
+.navbar-toggler[aria-expanded="true"] .custom-toggler {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .custom-toggler::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .custom-toggler::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* End of When modal is open (show X button) */
+
 .navbar-toggler {
   border: none !important;
   box-shadow: none !important;
@@ -295,6 +311,9 @@ html {
   }
   .nav-pills .nav-link {
     padding: 0.2rem 1rem;
+  }
+  .container .navbar-toggler {
+    padding: 0 0 10px 0;
   }
 }
 
