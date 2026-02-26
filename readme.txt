@@ -1,25 +1,38 @@
-Git Flow
+🔄 Daily Work Flow
+master    → production (live site)
+develop   → staging / integration
+feature/* → individual features
 
-Always work on develop branch
+Git Flow via Git Bash
 
-Git Flow
+Working Branch:
+git checkout -b feature/navbar-update
+git add .
+git commit -m "commit msg"
+git push origin feature/navbar-update
 
-1. Ensure your local repository is up-to-date
+2️⃣ Merge feature → develop
+git checkout develop
+git pull origin develop
+git merge --no-ff feature/navbar-update
+git push origin develop
 
-> git fetch origin
+3️⃣
+after merge feature → feature/navbar-update
+Delete Branch
+git branch -d feature/navbar-update
 
-2. Switch to the master branch:
-You need to be on the master branch to merge develop into it.
-If you're not already on master, switch to it with: develop branch
+4️⃣ Release to Production (Deploy)
+git checkout master
+git pull origin master
+git merge --no-ff develop
+git push origin master
 
-> git checkout master
+5️⃣ Create Version Tag
+para ito sa git name (yung date sa araw ng pagm-merge)
 
-3. Merge the develop branch into master: Now, merge the changes from develop into master:
-> git merge develop
+E.g,
+260226.01
 
-4. Push the changes to the remote repository:
-After the merge is complete and any conflicts are resolved, push the changes to the remote repository:
-
-> git push origin master
-
-5. (after published switch back again to develop branch)
+git tag -a 260226.01 -m "Portfolio release 260226.01"
+git push origin 260226.01
