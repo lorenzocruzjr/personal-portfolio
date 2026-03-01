@@ -1,7 +1,6 @@
-// Show the button when the user scrolls down
 window.onscroll = function() {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    document.getElementById("backToTop").style.display = "block";
+    document.getElementById("backToTop").style.display = "flex";
   } else {
     document.getElementById("backToTop").style.display = "none";
   }
