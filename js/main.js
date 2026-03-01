@@ -26,47 +26,47 @@
     }
 
     toggleBtn.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
+      body.classList.toggle("dark-mode");
 
-        if (body.classList.contains("dark-mode")) {
-          toggleBtn.textContent = "☀️";
-          localStorage.setItem("theme", "dark");
-        } else {
-          toggleBtn.textContent = "🌙";
-          localStorage.setItem("theme", "light");
-        }
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
     });
 })();
 
 // 3. Swiper Initialization
 (function() {
     document.addEventListener('DOMContentLoaded', function() {
-        const swiperOptions = {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            },
-        };
+      const swiperOptions = {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      };
 
-        // Initialize Swiper for each tab
-        new Swiper('#all .works-slider', swiperOptions);
-        new Swiper('#web .works-slider', swiperOptions);
-        new Swiper('#mobile .works-slider', swiperOptions);
+      // Initialize Swiper for each tab
+      new Swiper('#all .works-slider', swiperOptions);
+      new Swiper('#web .works-slider', swiperOptions);
+      new Swiper('#mobile .works-slider', swiperOptions);
     });
 })();
 
