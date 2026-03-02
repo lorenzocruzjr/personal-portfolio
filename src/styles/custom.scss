@@ -28,6 +28,10 @@ body {
     background-color: $dark-bg;
     color: $text-light !important;
 
+    .hero-section {
+      background: $dark-bg;
+    }
+
     .custom-navbar {
       background: rgba(18, 18, 18, 0.9);
     }
