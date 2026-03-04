@@ -1,14 +1,33 @@
-// 1. Navbar close logic on click
+// 1. Navbar Mobile Logic: Auto-close on link/button click AND click outside
 (function() {
-  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  const navToggle = document.querySelector('.navbar-toggler');
 
-      if (bsCollapse) {
-        bsCollapse.hide();
-      }
-    });
+  if (!navbarCollapse || !navToggle) return;
+
+  // Function to hide the navbar if it's currently open
+  const closeNavbar = () => {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse && navbarCollapse.classList.contains('show')) {
+      bsCollapse.hide();
+    }
+  };
+
+  // A. Close when clicking nav links or buttons (like your modal buttons)
+  document.querySelectorAll('.navbar-nav .nav-link, .btn').forEach(element => {
+    element.addEventListener('click', closeNavbar);
+  });
+
+  // B. Global listener to close navbar when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInsideNavbar = navbarCollapse.contains(event.target);
+    const isClickOnToggle = navToggle.contains(event.target);
+    const isOpen = navbarCollapse.classList.contains('show');
+
+    // If the navbar is open and the click was NOT on the navbar or the toggle button
+    if (isOpen && !isClickInsideNavbar && !isClickOnToggle) {
+      closeNavbar();
+    }
   });
 })();
 
@@ -87,3 +106,20 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 })();
+
+// 5. Modal Accessibility Fix
+const myModals = document.querySelectorAll('.modal');
+
+myModals.forEach(modal => {
+  // Removes focus from the active element when the modal starts to hide to prevent accessibility conflicts
+  modal.addEventListener('hide.bs.modal', () => {
+    document.activeElement.blur();
+  });
+
+  // Fixes "aria-hidden" console errors by ensuring focus is not trapped on a hidden element
+  modal.addEventListener('hidden.bs.modal', () => {
+    if (modal.getAttribute('aria-hidden') === 'true' && document.activeElement === modal) {
+      modal.removeAttribute('aria-hidden');
+    }
+  });
+});
