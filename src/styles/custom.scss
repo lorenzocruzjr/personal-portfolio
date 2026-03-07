@@ -16,6 +16,7 @@ $font-stack: "Inter", sans-serif;
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
 }
 
 body.modal-open {
@@ -216,15 +217,9 @@ body {
 }
 
 // Sections
-
-section {
-  scroll-margin-top: 200px;
-}
-
 .hero-section {
   background: linear-gradient(135deg, $primary-color, #3b4d59);
   min-height: 100vh;
-  scroll-margin-top: 150px;
 }
 
 .feature-icon {
@@ -352,8 +347,12 @@ section {
 
 // Responsive
 @media (max-width: 768px) {
+    section {
+    scroll-margin-top: 200px;
+  }
   .hero-section {
     text-align: center;
+    scroll-margin-top: 180px;
     img {
       margin-top: 2rem;
     }
@@ -363,8 +362,8 @@ section {
     padding: 0.2rem 1rem;
   }
   .btn-back-to-top {
-    right: 10px;
-    bottom: 0;
+    right: 15px;
+    bottom: 15px;
   }
   .nav-category {
     flex-wrap: nowrap;
@@ -372,8 +371,5 @@ section {
     .nav-item .nav-link {
       font-size: 14px;
     }
-  }
-  .container .navbar-toggler {
-    padding: 0 0 10px 0;
   }
 }
