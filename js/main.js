@@ -63,7 +63,7 @@
     const swiperOptions = {
       slidesPerView: 1,
       spaceBetween: 30,
-      loop: true,
+      loop: false,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
