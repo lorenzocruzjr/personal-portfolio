@@ -95,7 +95,7 @@
   if (!btn) return;
 
   window.onscroll = function() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
       btn.style.display = "flex";
     } else {
       btn.style.display = "none";
