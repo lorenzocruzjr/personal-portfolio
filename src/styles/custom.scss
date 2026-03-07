@@ -16,7 +16,6 @@ $font-stack: "Inter", sans-serif;
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 1rem;
 }
 
 body.modal-open {
@@ -347,8 +346,15 @@ body {
 
 // Responsive
 @media (max-width: 768px) {
+  html {
+    scroll-padding-top: 1rem;
+  }
+    section {
+    scroll-margin-top: 12.5rem;
+  }
   .hero-section {
     text-align: center;
+    scroll-margin-top: 11.25rem;
     img {
       margin-top: 2rem;
     }
