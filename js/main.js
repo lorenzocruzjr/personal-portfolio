@@ -94,16 +94,32 @@
   const btn = document.getElementById("backToTop");
   if (!btn) return;
 
-  window.onscroll = function() {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+  const scrollHandler = () => {
+    // Detect if current page is Home/Root
+    const isHomePage = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+    // The Logic:
+    // 1. If we are at the very top (less than 50px), always HIDE (none).
+    // 2. If we are NOT at the top AND (we are on Home OR scrolled > 100px), SHOW (flex).
+    if (scrollTop > 50 && (isHomePage || scrollTop > 100)) {
       btn.style.display = "flex";
     } else {
       btn.style.display = "none";
     }
   };
 
-  btn.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Initial check and Event Listener
+  scrollHandler();
+  window.addEventListener("scroll", scrollHandler);
+
+  btn.onclick = function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 })();
 
